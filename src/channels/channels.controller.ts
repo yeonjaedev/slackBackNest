@@ -3,15 +3,15 @@ import { Controller, Get, Post } from '@nestjs/common';
 @Controller('api/workspaces/:url/channels')
 export class ChannelsController {
     @Get()
-    getChannels(){}
+    getAllChannels(){}
 
     @Post()
-    postChannels(){
+    createChannels(){
 
     }
 
     @Get(':channel')
-    getChannel(){}
+    getSpecificChannel(){}
 
     @Get(':channel/chats')
     getChats(){
@@ -31,8 +31,8 @@ export class ChannelsController {
         
     }
     @Get(':channel/members')
-    getMemgers(){}
+    getAllMemgers(){}
 
     @Post(':channel/members')
-    postMemgers(){}
+    inviteMembers(){}
 }
