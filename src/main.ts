@@ -1,11 +1,13 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
+import { HttpExceptionFilter } from './httpException.filter';
 declare const module: any;
 
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.useGlobalFilters(new HttpExceptionFilter());
   const config = new DocumentBuilder()
   .setTitle("Select API")
   .setDescription('Slack 개발을 위한 API 문서입니다.')

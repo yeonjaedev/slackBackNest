@@ -26,7 +26,7 @@ import { Mentions } from './entities/Mentions';
     WorkspacesModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: '127.0.0.1',
       port: 3306,
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
